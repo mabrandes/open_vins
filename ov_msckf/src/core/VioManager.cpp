@@ -33,7 +33,7 @@ using namespace ov_msckf;
 VioManager::VioManager(VioManagerOptions& params_) {
 
 
-    timing_file_.open("/home/sgk/eth/research/rowesys-vio/libs/openvins_cws/src/open-vins/results/openvins_timing.txt", std::ofstream::out);
+    timing_file_.open("/home/mbrandes/Documents/Rowesys/datasets/openvins_timing.txt", std::ofstream::out);
 
 
     // Nice startup message

@@ -7,7 +7,7 @@ project(ov_msckf)
 #set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
 
 # Find catkin (the ROS build system)
-find_package(catkin QUIET COMPONENTS roscpp rosbag tf std_msgs geometry_msgs sensor_msgs nav_msgs visualization_msgs cv_bridge ov_core)
+find_package(catkin QUIET COMPONENTS roscpp rosbag tf std_msgs geometry_msgs sensor_msgs nav_msgs visualization_msgs cv_bridge ov_core alphasense_driver_ros)
 
 # Include libraries (if we don't have opencv 4, then fallback to opencv 3)
 find_package(Eigen3 REQUIRED)
@@ -26,7 +26,7 @@ message(WARNING "BOOST VERSION: " ${Boost_VERSION})
 if (catkin_FOUND)
     add_definitions(-DROS_AVAILABLE=1)
     catkin_package(
-            CATKIN_DEPENDS roscpp rosbag tf std_msgs geometry_msgs sensor_msgs nav_msgs visualization_msgs cv_bridge ov_core
+            CATKIN_DEPENDS roscpp rosbag tf std_msgs geometry_msgs sensor_msgs nav_msgs visualization_msgs cv_bridge ov_core alphasense_driver_ros
             INCLUDE_DIRS src
             LIBRARIES ov_msckf_lib
     )

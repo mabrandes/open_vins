@@ -67,6 +67,8 @@
     
     </node>
     
-    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ov_msckf)/launch/display.rviz" />
+    
+     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ov_msckf)/launch/display.rviz" />
+    
     
 </launch>
