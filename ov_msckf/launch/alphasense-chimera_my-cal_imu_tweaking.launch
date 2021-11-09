@@ -4,7 +4,7 @@
     <arg name="max_cameras" default="2" />
     <arg name="use_stereo"  default="true" />
     <arg name="bag_start"   default="0" />
-    <arg name="bag"         default="/home/mbrandes/Documents/Rowesys/datasets/alphasense_recordings_2.bag" />
+    <arg name="bag"         default="/home/mbrandes/Documents/Rowesys/datasets/bag_2021-10-26-17-09-05.bag" />
 
     <!-- imu starting thresholds -->
     <arg name="init_window_time"  default="1.0" />

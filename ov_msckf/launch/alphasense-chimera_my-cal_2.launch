@@ -11,7 +11,7 @@
     <arg name="init_imu_thresh"   default="0.03" />
 
     <!-- saving trajectory path and timing information -->
-    <arg name="dosave"      default="true" />
+    <arg name="dosave"      default="false" />
     <arg name="dotime"      default="true" />
     <arg name="path_est"    default="/home/mbrandes/Documents/Rowesys/datasets/txt_files_analysis/traj_estimate.txt" />
     <arg name="path_time"   default="/home/mbrandes/Documents/Rowesys/datasets/txt_files_analysis/traj_timing.txt" />
@@ -116,7 +116,7 @@
 	<arg name="device_serial" default="" />
 	<!-- File to load the camera settings from, if left empty the driver
 	takes defaults for all settings. -->
-	<arg name="ncamera_settings" default="" />
+	<arg name="ncamera_settings" default="$(find ov_msckf)/launch/ncamera_settings.yaml" />
 
 	<node pkg="alphasense_driver_ros"
 		type="alphasense_driver_ros"
@@ -130,6 +130,9 @@
 	<param name="ncamera_settings"
 		   type="string"
 		   value="$(arg ncamera_settings)" />
+	<param name="translate_device_time"
+		   type="bool"
+		   value="false" />
 	</node>
 
 
@@ -142,20 +145,23 @@
         </node>
     </group>
     
-    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ov_msckf)/launch/rowesys.rviz" />
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ov_msckf)/launch/display_driving.rviz" />
 
 
-	<arg name="is_record" default="false"/>
+	<arg name="is_record" default="true"/>
 	<arg name="bags_directory" value="/home/mbrandes/Documents/Rowesys/datasets"/>
 
 	<!-- Record Rosbag -->
 	<node pkg="rosbag" type="record" name="rosbag_record" args="record -o $(arg bags_directory)/bag 
 		/alphasense_driver_ros/imu 
+		/alphasense_driver_ros/cam0
+		/alphasense_driver_ros/cam1
 		/alphasense_driver_ros/device_time 
 		/ov_msckf/loop_feats 
 		/ov_msckf/loop_pose 
 		/ov_msckf/odomimu 
 		/ov_msckf/pathimu 
+		/ov_msck/pathgt
 		/ov_msckf/points_msckf 
 		/ov_msckf/poseimu" if="$(eval is_record)"/>   
 
