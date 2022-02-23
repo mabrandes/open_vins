@@ -1,6 +1,6 @@
 # Before the detailed information about the OpenVins software, here some general remarks: 
 - Install OpenVins with the instructions given below (section OpenVins)
-- All relevant launch files are in the ov_msckf package in the launch folder
+- All relevant launch files are in the ov_msckf package in the launch folder.
 - To check if OpenVins is working, run the tutorial launch file (tutorial.launch) in the folder mentioned before. The directory for the testbag needs to be adjusted.
 - In a next step the alphasense can be set up with the instructions given here: https://github.com/sevensense-robotics/alphasense_core_manual
 - To launch OpenVins with Alphasense inputs the launch file alphasense-chimera_my-cal_2.launch can be launched. It's an updated version of the launch file written by ShaneKelly: alphasense-chimera_my-cal.launch. The semesterproject report can be found above. In the launch files, a few directories have to be adjusted.
