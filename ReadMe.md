@@ -3,8 +3,8 @@
 - All relevant launch files are in the ov_msckf package in the launch folder
 - To check if OpenVins is working, run the tutorial launch file (tutorial.launch) in the folder mentioned before. The directory for the testbag needs to be adjusted.
 - In a next step the alphasense can be set up with the instructions given here: https://github.com/sevensense-robotics/alphasense_core_manual
-- To launch the OpenVins with Alphasense inputs 
-
+- To launch the OpenVins with Alphasense inputs the launch file alphasense-chimera_my-cal_with_alphasense_extra.launch can be launched. Its an updated version of the launch file written by ShaneKelly. 
+- 
 # OpenVINS
 ![C/C++ CI](https://github.com/rpng/open_vins/workflows/C/C++%20CI/badge.svg)
 
