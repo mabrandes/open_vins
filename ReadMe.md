@@ -3,7 +3,7 @@
 - All relevant launch files are in the ov_msckf package in the launch folder
 - To check if OpenVins is working, run the tutorial launch file (tutorial.launch) in the folder mentioned before. The directory for the testbag needs to be adjusted.
 - In a next step the alphasense can be set up with the instructions given here: https://github.com/sevensense-robotics/alphasense_core_manual
-- To launch OpenVins with Alphasense inputs the launch file alphasense-chimera_my-cal_2.launch can be launched. It's an updated version of the launch file written by ShaneKelly: alphasense-chimera_my-cal.launch. 
+- To launch OpenVins with Alphasense inputs the launch file alphasense-chimera_my-cal_2.launch can be launched. It's an updated version of the launch file written by ShaneKelly: alphasense-chimera_my-cal.launch. The semesterproject report can be found above. 
 - The software has a robust performance with recorded rosbags. When running online/ with real time camera and imu inputs the state estimation fails sometimes right at the beginning. The reasons are unclear. If it doesn't fail in the beginning it usually runs very smoothly until the program is aborted. The initial gyro and accelerometer "uncertainty values" (noise, random_walk: defined in the launch file) were already tweaked by Shane. 
 - Compared to ShaneKellys version, masks are no longer used. Performance improved without the masks. The extrinsic and intrinsic parameters are updated according to the values given in the alpasense_calib_parameters/7s_sensors.yaml file (from the official sevensense repo). 
 - Number of cameras was reduce to two and PTP synchronization (explained in sevensense repo)  was set up, but performance didnt improve significantly. 
